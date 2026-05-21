@@ -7,7 +7,7 @@ mobileMenuButton?.addEventListener('click', () => {
   mobileMenuButton.setAttribute('aria-expanded', String(isOpen));
 });
 
-const anchors = document.querySelectorAll('.site-nav a[href^="#"]');
+const anchors = document.querySelectorAll('a[href^="#"]');
 
 anchors.forEach((anchor) => {
   anchor.addEventListener('click', (e) => {
