@@ -56,6 +56,7 @@ button {
 
 .section {
   padding: 5rem 0;
+  scroll-margin-top: 100px;
 }
 
 .section-alt {
@@ -746,5 +747,24 @@ button {
 
   .pdf-container {
     height: 55vh;
+  }
+}
+
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: inline-flex;
+  }
+
+  .pdf-container {
+    display: none !important;
   }
 }

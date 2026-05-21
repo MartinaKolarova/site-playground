@@ -149,17 +149,30 @@
 <div class="pdf-wrapper">
 
   <div class="pdf-actions">
-    <button class="button button-primary" id="showPdfBtn">
+
+    <!-- Desktop -->
+    <button class="button button-primary desktop-only" id="showPdfBtn">
       Zobrazit PDF
     </button>
 
-    <a 
+    <!-- Mobil -->
+    <a
+      class="button button-primary mobile-only"
+      href="pdf/manual.pdf"
+      target="_blank"
+    >
+      Otevřít PDF
+    </a>
+
+    <!-- Download -->
+    <a
       class="button button-secondary"
       href="pdf/manual.pdf"
       download
     >
       Stáhnout PDF
     </a>
+
   </div>
 
   <div class="pdf-container" id="pdfContainer">
@@ -195,7 +208,7 @@
                 <span class="step-number">01</span>
                 <h3>ÚVOD</h3>
                 <h4>Aktivita: „Co je moje?“</h4>
-                <p class="text-muted">
+                <div class="text-muted">
 Žáci chodí po prostoru. Na signál se zastaví a reagují na otázky:
 <ul>
   <li>Co je pro tebe hodně cenné?</li>
@@ -203,14 +216,14 @@
   <li>Co bys cítil/a, kdybys něco vzal/a, co ti nepatří?</li>
 </ul>
 Sdílení ve dvojicích → krátké společné shrnutí
-                </p>
+</div>
               </article>
               <article class="step-card">
                 <span class="step-number">02</span>
                 <h3>VSTUP DO PŘÍBĚHU</h3>
                 <h4>Učitel v roli
                 </h4>
-                <p class="text-muted">
+                <div class="text-muted">
                   Učitel vstupuje do role třídního učitele:
 „Dnes ráno za mnou přišla jedna žákyně. Ztratila mobil. Tvrdí, že ho měla ještě o přestávce. Teď je pryč. Nikdo nic neviděl…“
 <p>Otázky pro třídu (v roli):</p>
@@ -218,15 +231,14 @@ Sdílení ve dvojicích → krátké společné shrnutí
   <li>Co byste na mém místě dělali?</li>
   <li>Co je teď nejdůležitější?</li>
 </ul>
-<p></p>
-                </p>
+</div>
               </article>
               <article class="step-card">
                 <span class="step-number">03</span>
                 <h3>Řešení &amp; Prevence</h3>
-                <p class="text-muted">
+                <div class="text-muted">
                   Aplikace školního řádu a následná reflexe v rámci třídnické hodiny o důvěře.
-                </p>
+                </div>
               </article>
             </div>
           </div>
@@ -237,7 +249,7 @@ Sdílení ve dvojicích → krátké společné shrnutí
 >
   Poslat návrh</a>
             <p class="text-muted">
-              Láká Tě vymyslet, jak by mohla lekce pokračovat? Napiš nám svůj návrh a začni učit ještě dnes!
+              Chceš vymyslet, jak by mohla lekce pokračovat? Napiš nám svůj návrh a začni učit ještě dnes!
             </p>
           </div>
         </div>

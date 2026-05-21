@@ -25,10 +25,12 @@ window.addEventListener('scroll', () => {
 const button = document.getElementById('showPdfBtn');
 const pdf = document.getElementById('pdfContainer');
 
-button.addEventListener('click', () => {
-  pdf.style.display = 'block';
-  button.style.display = 'none';
-});
+if (button && pdf) {
+  button.addEventListener('click', () => {
+    pdf.style.display = 'block';
+    button.style.display = 'none';
+  });
+}
 
 // Cookie Banner
 const cookieBanner = document.getElementById('cookieBanner');
