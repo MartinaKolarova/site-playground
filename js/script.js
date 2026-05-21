@@ -8,29 +8,24 @@ mobileMenuButton?.addEventListener('click', () => {
 });
 
 const anchors = document.querySelectorAll('.site-nav a[href^="#"]');
+
 anchors.forEach((anchor) => {
-  anchor.addEventListener('click', () => {
+  anchor.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const targetId = anchor.getAttribute('href');
+    const target = document.querySelector(targetId);
+
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+      });
+    }
+
     siteNav.classList.remove('open');
     mobileMenuButton?.setAttribute('aria-expanded', 'false');
   });
 });
-
-window.addEventListener('scroll', () => {
-  const scrollTop = window.scrollY;
-  const docHeight = document.body.scrollHeight - window.innerHeight;
-  const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-  progressBar.style.width = `${Math.min(Math.max(progress, 0), 100)}%`;
-});
-
-const button = document.getElementById('showPdfBtn');
-const pdf = document.getElementById('pdfContainer');
-
-if (button && pdf) {
-  button.addEventListener('click', () => {
-    pdf.style.display = 'block';
-    button.style.display = 'none';
-  });
-}
 
 // Cookie Banner
 const cookieBanner = document.getElementById('cookieBanner');
