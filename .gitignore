@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# env secrets
+.env
+.env.local
+
+# dependencies
+node_modules
+
+# build folders
+dist
+build
+
+# editor
+.vscode
+
+# logs
+*.log
