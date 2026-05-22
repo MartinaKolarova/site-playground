@@ -26,34 +26,59 @@ anchors.forEach((anchor) => {
     mobileMenuButton?.setAttribute('aria-expanded', 'false');
   });
 });
+
 // Cookie Banner
+
 const cookieBanner = document.getElementById('cookieBanner');
 const cookieAcceptBtn = document.getElementById('cookieAcceptBtn');
 const cookieDeclineBtn = document.getElementById('cookieDeclineBtn');
 
 function setCookieConsent(value) {
   localStorage.setItem('cookieConsent', value);
+
   cookieBanner.classList.add('hidden');
+}
+
+function updateAnalyticsConsent(granted) {
+  if (typeof gtag === 'function') {
+    gtag('consent', 'update', {
+      analytics_storage: granted ? 'granted' : 'denied',
+    });
+  }
 }
 
 function initializeCookieBanner() {
   const hasConsent = localStorage.getItem('cookieConsent');
+
   if (hasConsent) {
     cookieBanner.classList.add('hidden');
+  }
+
+  if (hasConsent === 'accepted') {
+    updateAnalyticsConsent(true);
+  }
+
+  if (hasConsent === 'declined') {
+    updateAnalyticsConsent(false);
   }
 }
 
 cookieAcceptBtn.addEventListener('click', () => {
   setCookieConsent('accepted');
+
+  updateAnalyticsConsent(true);
 });
 
 cookieDeclineBtn.addEventListener('click', () => {
   setCookieConsent('declined');
+
+  updateAnalyticsConsent(false);
 });
 
 initializeCookieBanner();
 
 // Privacy Policy Modal
+
 const privacyBtn = document.getElementById('privacyPolicyBtn');
 const privacyModal = document.getElementById('privacyModal');
 const privacyCloseBtn = document.getElementById('privacyCloseBtn');
@@ -76,6 +101,7 @@ document.addEventListener('keydown', (e) => {
     privacyModal.classList.remove('active');
   }
 });
+
 // PDF Preview
 
 const button = document.getElementById('showPdfBtn');
@@ -84,6 +110,7 @@ const pdf = document.getElementById('pdfContainer');
 if (button && pdf) {
   button.addEventListener('click', () => {
     pdf.classList.add('active');
+
     button.style.display = 'none';
   });
 }
