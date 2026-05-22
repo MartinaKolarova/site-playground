@@ -77,3 +77,14 @@ document.addEventListener('keydown', (e) => {
     privacyModal.classList.remove('active');
   }
 });
+// PDF Preview
+
+const button = document.getElementById('showPdfBtn');
+const pdf = document.getElementById('pdfContainer');
+
+if (button && pdf) {
+  button.addEventListener('click', () => {
+    pdf.classList.add('active');
+    button.style.display = 'none';
+  });
+}
