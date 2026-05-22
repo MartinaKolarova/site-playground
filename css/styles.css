@@ -682,6 +682,7 @@ button {
     display: none;
 
     pointer-events: none;
+    z-index: 120;
   }
 
   .site-nav.open {

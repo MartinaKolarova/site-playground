@@ -7,7 +7,7 @@ mobileMenuButton?.addEventListener('click', () => {
   mobileMenuButton.setAttribute('aria-expanded', String(isOpen));
 });
 
-const anchors = document.querySelectorAll('.site-nav a[href^="#"]');
+const anchors = document.querySelectorAll('a[href^="#"]');
 
 anchors.forEach((anchor) => {
   anchor.addEventListener('click', (e) => {
@@ -26,26 +26,6 @@ anchors.forEach((anchor) => {
     mobileMenuButton?.setAttribute('aria-expanded', 'false');
   });
 });
-
-const pageLinks = document.querySelectorAll(
-  '.hero-actions a[href^="#"], .text-center a[href^="#"]',
-);
-
-pageLinks.forEach((anchor) => {
-  anchor.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    const targetId = anchor.getAttribute('href');
-    const target = document.querySelector(targetId);
-
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth',
-      });
-    }
-  });
-});
-
 // Cookie Banner
 const cookieBanner = document.getElementById('cookieBanner');
 const cookieAcceptBtn = document.getElementById('cookieAcceptBtn');
